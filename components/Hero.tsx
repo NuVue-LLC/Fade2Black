@@ -51,7 +51,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="font-body text-lg md:text-xl text-silver/80 mt-6 max-w-xl"
         >
-          Hand-picked, quality pre-owned vehicles in Indianola &mdash; plus professional ceramic window tinting
+          Hand-picked, quality pre-owned vehicles in Indianola, Iowa
         </motion.p>
 
         <motion.div
@@ -72,14 +72,10 @@ export default function Hero() {
             View Inventory
           </a>
           <a
-            href="#tinting"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#tinting")?.scrollIntoView({ behavior: "smooth" });
-            }}
+            href="tel:+15155522660"
             className="border border-silver/30 hover:border-red text-white font-body text-lg uppercase tracking-wider px-8 py-4 transition-colors"
           >
-            Book a Tint
+            Call Now
           </a>
         </motion.div>
 

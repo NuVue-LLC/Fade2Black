@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const navLinks = [
+const navLinks: { label: string; href: string; isPage?: boolean }[] = [
   { label: "Inventory", href: "#inventory" },
   { label: "About", href: "#about" },
-  { label: "Tinting", href: "#tinting" },
+  { label: "Tinting", href: "/tinting", isPage: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -20,7 +20,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isPage?: boolean) => {
+    if (isPage) {
+      setMobileOpen(false);
+      return; // let normal navigation happen
+    }
     e.preventDefault();
     setMobileOpen(false);
     const el = document.querySelector(href);
@@ -56,7 +60,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => handleClick(e, link.href)}
+              onClick={(e) => handleClick(e, link.href, link.isPage)}
               className="font-body text-sm uppercase tracking-widest text-silver hover:text-red transition-colors"
             >
               {link.label}
@@ -109,7 +113,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
+                onClick={(e) => handleClick(e, link.href, link.isPage)}
                 className="font-body text-lg uppercase tracking-widest text-silver hover:text-red transition-colors"
               >
                 {link.label}
