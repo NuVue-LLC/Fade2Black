@@ -83,7 +83,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="tel:+15155522660"
+            href="tel:+15158683990"
             className="bg-red hover:bg-red-light text-white font-body text-sm uppercase tracking-wider px-5 py-2.5 transition-colors"
           >
             Call Now
@@ -136,7 +136,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="tel:+15155522660"
+              href="tel:+15158683990"
               className="bg-red hover:bg-red-light text-white font-body text-center uppercase tracking-wider px-5 py-3 mt-2 transition-colors"
             >
               Call Now

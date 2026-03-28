@@ -72,7 +72,7 @@ export default function Hero() {
             View Inventory
           </a>
           <a
-            href="tel:+15155522660"
+            href="tel:+15158683990"
             className="border border-silver/30 hover:border-red text-white font-body text-lg uppercase tracking-wider px-8 py-4 transition-colors"
           >
             Call Now
