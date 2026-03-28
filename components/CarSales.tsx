@@ -133,7 +133,7 @@ export default function CarSales() {
               </a>
 
               <p className="font-body text-xs text-silver/50 mt-4 uppercase tracking-wider">
-                New vehicles added weekly &bull; Message us on Facebook or call directly
+                New vehicles added monthly &bull; Message us on Facebook or call directly
               </p>
             </div>
           </div>
