@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import CarSales from "@/components/CarSales";
 import Financing from "@/components/Financing";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <CarSales />
       <Financing />
       <About />
+      <Testimonials />
       <Footer />
     </main>
   );
