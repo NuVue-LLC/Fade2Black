@@ -19,7 +19,7 @@ const barlow = Barlow({
 export const metadata: Metadata = {
   title: "Fade 2 Black | Pre-Owned Vehicles in Indianola, Iowa",
   description:
-    "Hand-picked, quality pre-owned vehicles in Indianola, Iowa. Call Austin Easter at (515) 552-2660.",
+    "Hand-picked, quality pre-owned vehicles in Indianola, Iowa. Financing available. Call Austin Easter at (515) 552-2660.",
   keywords: [
     "Indianola Iowa",
     "pre-owned cars",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fade 2 Black | Pre-Owned Vehicles in Indianola, Iowa",
     description:
-      "Hand-picked, quality pre-owned vehicles in Indianola, Iowa. Call Austin Easter at (515) 552-2660.",
+      "Hand-picked, quality pre-owned vehicles in Indianola, Iowa. Financing available. Call Austin Easter at (515) 552-2660.",
     type: "website",
-    url: "https://fade2black.com",
+    url: "https://fade2blackauto.com",
   },
 };
 
