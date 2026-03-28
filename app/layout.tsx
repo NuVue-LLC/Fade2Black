@@ -42,6 +42,55 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutoDealer",
+              name: "Fade 2 Black",
+              url: "https://fade2blackauto.com",
+              telephone: "(515) 552-2660",
+              priceRange: "$$",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "1003 West 2nd Ave",
+                addressLocality: "Indianola",
+                addressRegion: "IA",
+                postalCode: "50125",
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 41.3578,
+                longitude: -93.5572,
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  opens: "08:00",
+                  closes: "18:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Saturday",
+                  opens: "09:00",
+                  closes: "15:00",
+                },
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "47",
+                bestRating: "5",
+              },
+              sameAs: ["https://www.facebook.com/austin.easter.371059/"],
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${bebasNeue.variable} ${barlow.variable} font-body antialiased bg-black text-silver-light grain-overlay`}
       >
