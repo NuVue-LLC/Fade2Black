@@ -53,9 +53,9 @@ const trustPoints = [
 ];
 
 const featuredCars = [
-  { src: "/car1.jpg", alt: "Black sedan on the lot" },
-  { src: "/car2.jpg", alt: "Red sports car" },
-  { src: "/car3.jpg", alt: "Dark SUV" },
+  { src: "/car1.jpg", alt: "Audi sedan", label: "Audi Sedan" },
+  { src: "/car2.jpg", alt: "GMC truck", label: "GMC Truck" },
+  { src: "/car3.jpg", alt: "Chevrolet Silverado", label: "Chevrolet Silverado" },
 ];
 
 export default function CarSales() {
@@ -78,22 +78,42 @@ export default function CarSales() {
           </p>
         </AnimateIn>
 
-        {/* Featured vehicle images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+        {/* Inventory cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {featuredCars.map((car, i) => (
             <AnimateIn key={car.src} delay={i * 0.1}>
-              <div className="relative aspect-[16/10] overflow-hidden border border-dark-light/50 group">
-                <Image
-                  src={car.src}
-                  alt={car.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-3 left-3 bg-black/70 text-white font-body text-xs uppercase tracking-wider px-3 py-1.5">
-                  Sample Inventory
+              <a
+                href="https://www.facebook.com/austin.easter.371059/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-dark border border-dark-light/50 hover:border-red/50 overflow-hidden transition-all duration-500"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={car.src}
+                    alt={car.alt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 </div>
-              </div>
+                <div className="p-5 flex items-center justify-between">
+                  <div>
+                    <h4 className="font-heading text-xl text-white group-hover:text-red transition-colors">
+                      {car.label}
+                    </h4>
+                    <p className="font-body text-xs text-silver/60 uppercase tracking-wider mt-1">
+                      Available Now
+                    </p>
+                  </div>
+                  <span className="font-body text-sm uppercase tracking-wider text-red flex items-center gap-1.5 opacity-70 group-hover:opacity-100 transition-opacity">
+                    View Details
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
             </AnimateIn>
           ))}
         </div>
