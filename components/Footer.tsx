@@ -6,29 +6,9 @@ import DarkMap from "./DarkMap";
 export default function Footer() {
   return (
     <footer id="contact" className="relative bg-black-soft border-t border-dark-light/30">
-      {/* CTA Banner */}
-      <div className="relative py-16 carbon-fiber-bg">
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <AnimateIn>
-            <h2 className="font-heading text-5xl md:text-7xl text-white mb-4 red-glow-text">
-              READY TO FIND YOUR <span className="text-red">RIDE</span>?
-            </h2>
-            <p className="font-body text-lg text-silver mb-8">
-              Call Austin today to check out our current inventory.
-            </p>
-            <a
-              href="tel:+15158683990"
-              className="inline-block bg-red hover:bg-red-light text-white font-body text-xl uppercase tracking-wider px-12 py-5 transition-colors shadow-red-glow"
-            >
-              (515) 868-3990
-            </a>
-          </AnimateIn>
-        </div>
-      </div>
-
       {/* Footer info */}
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
           <div>
             <h3 className="font-heading text-3xl text-white mb-4">

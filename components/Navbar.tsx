@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 const navLinks: { label: string; href: string; isPage?: boolean }[] = [
-  { label: "Inventory", href: "#inventory" },
-  { label: "Financing", href: "#financing" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/", isPage: true },
+  { label: "Inventory", href: "/inventory", isPage: true },
+  { label: "Financing", href: "/financing", isPage: true },
+  { label: "About", href: "/about", isPage: true },
+  { label: "Contact", href: "/contact", isPage: true },
 ];
 
 export default function Navbar() {
@@ -77,14 +78,16 @@ export default function Navbar() {
               key={link.href}
               href={getHref(link.href, link.isPage)}
               onClick={(e) => handleClick(e, link.href, link.isPage)}
-              className="font-body text-sm uppercase tracking-widest text-silver hover:text-red transition-colors"
+              className={`font-body text-sm uppercase tracking-widest transition-colors ${
+                pathname === link.href ? "text-red" : "text-silver hover:text-red"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
             href="tel:+15158683990"
-            className="bg-red hover:bg-red-light text-white font-body text-sm uppercase tracking-wider px-5 py-2.5 transition-colors"
+            className="bg-red hover:bg-red-light text-white font-body text-sm uppercase tracking-wider px-5 py-2.5 transition-colors shadow-red-glow"
           >
             Call Now
           </a>
@@ -130,14 +133,16 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href, link.isPage)}
-                className="font-body text-lg uppercase tracking-widest text-silver hover:text-red transition-colors"
+                className={`font-body text-lg uppercase tracking-widest transition-colors ${
+                  pathname === link.href ? "text-red" : "text-silver hover:text-red"
+                }`}
               >
                 {link.label}
               </a>
             ))}
             <a
               href="tel:+15158683990"
-              className="bg-red hover:bg-red-light text-white font-body text-center uppercase tracking-wider px-5 py-3 mt-2 transition-colors"
+              className="bg-red hover:bg-red-light text-white font-body text-center uppercase tracking-wider px-5 py-3 mt-2 transition-colors shadow-red-glow"
             >
               Call Now
             </a>

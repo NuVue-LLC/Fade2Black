@@ -100,6 +100,30 @@ body {
   background: #dc2626;
 }
 
+/* Radial red glow background */
+.red-glow-bg {
+  position: relative;
+}
+
+.red-glow-bg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Section divider */
 .section-divider {
   background: linear-gradient(90deg, transparent, #dc262640, transparent);
