@@ -14,7 +14,7 @@ export interface Vehicle {
 }
 
 export const API_URL =
-  "https://lot-os.vercel.app/api/inventory/public?dealer_id=9d84ce04-ef8a-448d-893b-3149578a99c4";
+  "https://lot-os.vercel.app/api/inventory/public?dealer_id=93340869-309d-40aa-9032-a487a34a3386";
 
 export const FB_MARKETPLACE =
   "https://www.facebook.com/marketplace/profile/100094782047411/?ref=permalink&mibextid=6ojiHh";
