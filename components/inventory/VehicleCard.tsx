@@ -1,11 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Vehicle, formatPrice, formatMileage, getPhoto } from "@/lib/inventory";
 
 export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   const photo = getPhoto(vehicle);
 
   return (
-    <div className="group bg-black-card border border-dark-light/50 overflow-hidden hover:border-red/30 transition-colors duration-300">
+    <Link
+      href={`/inventory/${vehicle.id}`}
+      className="group block bg-black-card border border-dark-light/50 overflow-hidden hover:border-red/50 transition-colors duration-300"
+    >
       {/* Photo */}
       <div className="relative aspect-[4/3] overflow-hidden bg-dark">
         {photo ? (
@@ -23,11 +27,16 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
             </svg>
           </div>
         )}
+        {vehicle.photos && vehicle.photos.length > 1 && (
+          <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white font-body text-xs px-2.5 py-1 rounded-full">
+            {vehicle.photos.length} photos
+          </div>
+        )}
       </div>
 
       {/* Info */}
       <div className="p-5">
-        <h3 className="font-heading text-2xl text-white mb-1">
+        <h3 className="font-heading text-2xl text-white mb-1 group-hover:text-red transition-colors">
           {vehicle.year} {vehicle.make} {vehicle.model}
           {vehicle.trim && (
             <span className="text-silver text-lg ml-2">{vehicle.trim}</span>
@@ -43,16 +52,13 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
             </span>
           )}
         </div>
-        <a
-          href="sms:+15155522660"
-          className="flex items-center justify-center gap-2 w-full bg-red hover:bg-red-light text-white font-body uppercase tracking-wider text-sm px-4 py-3 transition-colors"
-        >
+        <div className="flex items-center justify-center gap-2 w-full bg-red group-hover:bg-red-light text-white font-body uppercase tracking-wider text-sm px-4 py-3 transition-colors">
+          View Details
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
-          Contact About This Vehicle
-        </a>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

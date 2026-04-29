@@ -6,11 +6,27 @@ export interface Vehicle {
   trim?: string;
   price: number;
   mileage: number;
+  color?: string;
+  description?: string;
   photos?: string[];
   images?: string[];
   photo_url?: string;
   image_url?: string;
   status?: string;
+}
+
+export async function fetchVehicles(): Promise<Vehicle[]> {
+  const res = await fetch(API_URL);
+  if (!res.ok) throw new Error("Failed to fetch inventory");
+  const data = await res.json();
+  return Array.isArray(data)
+    ? data
+    : data.vehicles || data.inventory || data.data || [];
+}
+
+export async function fetchVehicleById(id: string): Promise<Vehicle | null> {
+  const all = await fetchVehicles();
+  return all.find((v) => v.id === id) ?? null;
 }
 
 export const API_URL =
