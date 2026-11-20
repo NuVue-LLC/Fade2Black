@@ -97,10 +97,11 @@ export default function Footer() {
           <p className="font-body text-xs text-silver/50 uppercase tracking-wider">
             &copy; {new Date().getFullYear()} Fade 2 Black &mdash; Indianola, Iowa. All rights reserved.
           </p>
-          <p className="font-body text-[10px] text-silver/30 mt-2">
+          <p className="font-body text-xs text-silver/40 mt-3">
             Powered by{" "}
             <a href="https://nuvuepro.com" target="_blank" rel="noopener noreferrer" className="hover:text-silver/50 transition-colors">
-              NuVue
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/nuvue-logo.png" alt="NuVue" width={390} height={141} loading="lazy" style={{ height: 24, width: "auto", display: "inline-block", verticalAlign: "middle" }} />
             </a>
           </p>
         </div>
